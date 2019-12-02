@@ -1,1 +1,5 @@
 dbname=food
+
+1-Ajouter l'employer admin: http://localhost/projet-food/include/AjoutEmployerAdmin.php
+2-email:admin@yahoo.com 
+  password:admin
