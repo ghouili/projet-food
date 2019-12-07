@@ -1,4 +1,5 @@
 <?php
+
 include 'class/employer.class.php';
 $cpass_er=$im_er=$pass_er=$email_er=$name_er = '';
 $email=$name = $phone=$imgv= '';
@@ -18,6 +19,18 @@ if(isset($_POST["submit"])){
         $email_er = "invalid email";    
         goto display;
     }
+    
+    //condition si l'email existe ou nn
+         $verif=new employer;
+         $ver = $verif->verifier($email);
+         
+         if($ver->rowCount()>0){
+             $email_er="this email is in use";
+             goto display;
+         }
+    //fin condition email
+    
+
     if(strlen($pass)<6){
         $pass_er="password must be minimum of 6 characters";
         goto display;
@@ -27,6 +40,7 @@ if(isset($_POST["submit"])){
         goto display;
 
     }
+    
     if(!empty($_FILES['img']["name"])){
     
         //t9assem chaine de caractére el table 

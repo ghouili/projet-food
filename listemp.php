@@ -38,12 +38,14 @@
   </nav>
 </header>
 <main>
-  <div class="title">
+  <div id="ch" class="title">
     <h2>liste des employer</h2>
-    <a href="">Dashboard <?=$_SESSION['name'] ;?> !</a>
+    <?php if($_SESSION["img"]!= null){?>
+  <img src="<?= $_SESSION["img"];   ?>" class="profilPic"> <?php ;} ?>
+    <a id="a" href="">Dashboard <?=$_SESSION['name'] ;?> !</a>
   </div>
 
-  <article class="larg">
+  <article class="larg">  
     <?php if($_SESSION['eid']!=1) 
     {
     echo '<p class="alert alert-danger text-center" style="margin-top:20%">espace admin</p>';

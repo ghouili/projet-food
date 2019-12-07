@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION["eid"]==1)
+{
+?>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -85,3 +91,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
   </body>
 </html>
+    <?php } else header('Location:listemp.php');?>
