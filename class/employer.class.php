@@ -58,5 +58,21 @@
           echo $e->getMessage();
         }
       }
+    
+      //tefsa5 taswira bel base de donnée
+      public function deleteImg($eid){
+        $req='SELECT img from employer where eid=:eid ';
+        $res=$this->cnx->prepare($req);
+        $res->bindParam(':eid',$eid);
+        $res->execute();
+        $row = $res->fetch();
+        if($row["img"]==null){
+          return false;
+        }else
+        {unlink('../'.$row["img"]);
+          
+          return true;
+        }
+      }
   }
 ?>
