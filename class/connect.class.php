@@ -3,7 +3,7 @@ class connect{
     private $host ='localhost';
     private $dbname= 'food';
     private $user = 'root';
-    private $pass = '';
+    private $pass = 'toor';
     public $pdo = null;
     public function ConDb(){
         try {

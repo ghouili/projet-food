@@ -50,55 +50,8 @@
   }
     
      else { ?>
-     <!-- MODAL FORM -->
-     <div id="ajout" class="modal" style="height:auto;">
-
-   <form action="include/addEmp.php" method="POST">
-     <fieldset>
-       <legend class="font-weight-bold text-center">AJOUT EMPLOYER</legend>
-        <br><br>
-        <div class="form-group">
-        <label for="name">name:</label>
-        <input type="text" name="name" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        <div class="form-group">
-        <label for="phone">phone:</label>
-        <input type="text"  name="phone" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        <div class="form-group">
-        <label for="email">email:</label>
-        <input type="email"  name="email" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        
-        <div class="form-group">
-        <label for="pass1">password:</label>
-        <input id="pass1" type="password"  name="pass1" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        
-        <div class="form-group">
-        <label for="pass2">repeat Password:</label>
-        <input id="pass2" type="password"  name="pass2" class="form-control" style="padding:0px; height:32px;" required>
-       
-        </div>
-
-        <div class="form-group">
-        <input id="bouton" type="button" value="AJOUT" class="btn btn-success" onclick="verifP();" > 
-        </div>
-
-     <a href="#" rel="modal:close">Close</a>
-     </fieldset>
-   
-   </form>
-
-  
-</div>
-
-<!-- Link to open the modal -->
-<p><a href="#ajout" style="width:40px;" rel="modal:open"> <input type="button" value="AJOUT" class="btn btn-primary"> </a></p>
+     
+<a href="ajoutEmp.php" style="width:40px;"> <input type="button" value="AJOUT" class="btn btn-success"> </a>
 
 
       <div class="container py3">
