@@ -39,7 +39,9 @@
 <main>
   <div class="title">
     <h2>ADD FOOD</h2>
-    <a href="">Hello <?=$_SESSION['name'] ;?> !</a>
+    <?php if($_SESSION["img"]!= null){?>
+  <img src="<?= $_SESSION["img"];   ?>" class="profilPic"> <?php ;} ?>
+    <a href="">Dashboard <?=$_SESSION['name'] ;?> !</a>
   </div>
 
   <article class="larg">

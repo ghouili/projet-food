@@ -42,19 +42,36 @@
 
       }
 
-      public function insertEmp($name,$phone,$email,$password){
+      public function insertEmp($name,$phone,$email,$password,$img){
         try {
-          $req = "INSERT into employer(name, phone, email, password) VALUES (:name, :phone, :email, :password) ";
+          $req = "INSERT into employer(name, phone, email, password,img) VALUES (:name, :phone, :email, :password,:img) ";
           $res = $this->cnx->prepare($req);
           $res->bindParam(':name',$name);
           $res->bindParam(':phone',$phone);
           $res->bindParam(':email',$email);
           $passHashed=password_hash($password, PASSWORD_DEFAULT);
           $res->bindParam(':password',$passHashed);
+          $res->bindParam(':img',$img);
           $res->execute();
           return $res;
         } catch (Exception $e) {
           echo $e->getMessage();
+        }
+      }
+    
+      //tefsa5 taswira bel base de donnée
+      public function deleteImg($eid){
+        $req='SELECT img from employer where eid=:eid ';
+        $res=$this->cnx->prepare($req);
+        $res->bindParam(':eid',$eid);
+        $res->execute();
+        $row = $res->fetch();
+        if($row["img"]==null){
+          return false;
+        }else
+        {unlink('../'.$row["img"]);
+          
+          return true;
         }
       }
   }

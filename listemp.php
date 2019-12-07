@@ -38,67 +38,22 @@
   </nav>
 </header>
 <main>
-  <div class="title">
+  <div id="ch" class="title">
     <h2>liste des employer</h2>
-    <a href="">Dashboard <?=$_SESSION['name'] ;?> !</a>
+    <?php if($_SESSION["img"]!= null){?>
+  <img src="<?= $_SESSION["img"];   ?>" class="profilPic"> <?php ;} ?>
+    <a id="a" href="">Dashboard <?=$_SESSION['name'] ;?> !</a>
   </div>
 
-  <article class="larg">
+  <article class="larg">  
     <?php if($_SESSION['eid']!=1) 
     {
     echo '<p class="alert alert-danger text-center" style="margin-top:20%">espace admin</p>';
   }
     
      else { ?>
-     <!-- MODAL FORM -->
-     <div id="ajout" class="modal" style="height:auto;">
-
-   <form action="include/addEmp.php" method="POST">
-     <fieldset>
-       <legend class="font-weight-bold text-center">AJOUT EMPLOYER</legend>
-        <br><br>
-        <div class="form-group">
-        <label for="name">name:</label>
-        <input type="text" name="name" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        <div class="form-group">
-        <label for="phone">phone:</label>
-        <input type="text"  name="phone" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        <div class="form-group">
-        <label for="email">email:</label>
-        <input type="email"  name="email" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        
-        <div class="form-group">
-        <label for="pass1">password:</label>
-        <input id="pass1" type="password"  name="pass1" class="form-control" style="padding:0px; height:32px;" required>
-        </div>
-
-        
-        <div class="form-group">
-        <label for="pass2">repeat Password:</label>
-        <input id="pass2" type="password"  name="pass2" class="form-control" style="padding:0px; height:32px;" required>
-       
-        </div>
-
-        <div class="form-group">
-        <input id="bouton" type="button" value="AJOUT" class="btn btn-success" onclick="verifP();" > 
-        </div>
-
-     <a href="#" rel="modal:close">Close</a>
-     </fieldset>
-   
-   </form>
-
-  
-</div>
-
-<!-- Link to open the modal -->
-<p><a href="#ajout" style="width:40px;" rel="modal:open"> <input type="button" value="AJOUT" class="btn btn-primary"> </a></p>
+     
+<a href="ajoutEmp.php" style="width:40px;"> <input type="button" value="AJOUT" class="btn btn-success"> </a>
 
 
       <div class="container py3">
